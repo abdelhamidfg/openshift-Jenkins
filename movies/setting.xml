@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<settings>
+        <mirrors>
+         <mirror>
+         <id>internal-repository</id>
+         <name>Maven Repository Manager</name>
+         <!-- //  Change the url attribute to the nexus proxy server URL for your environment. -->
+         <url>http://nexus3-nexus3.apps.cluster.ocp-hamid.com/repository/maven-central/</url>
+         <mirrorOf>*</mirrorOf>
+         </mirror>
+       </mirrors>
+</settings>
