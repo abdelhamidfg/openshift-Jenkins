@@ -28,7 +28,7 @@ pipeline {
                 echo '### Checking for compile errors ###'
                 sh '''
                         cd ${APP_NAME}
-                        mvn  -B clean compile
+                        mvn  -s settings.xml -B clean compile
                    '''
             }
         }
@@ -38,7 +38,7 @@ pipeline {
                 echo '### Running unit tests ###'
                 sh '''
                         cd ${APP_NAME}
-                        mvn  -B clean test
+                        mvn -s settings.xml -B clean test
                    '''
             }
         }
@@ -48,7 +48,7 @@ pipeline {
                 echo '### Running pmd on code ###'
                 sh '''
                         cd ${APP_NAME}
-                        mvn  -B clean pmd:check
+                        mvn -s settings.xml -B clean pmd:check
                    '''
             }
         }
@@ -58,7 +58,7 @@ pipeline {
                 echo '### Creating fat JAR ###'
                 sh '''
                         cd ${APP_NAME}
-                        mvn  -B clean package -DskipTests=true
+                        mvn -s settings.xml -B clean package -DskipTests=true
                    '''
             }
         }
