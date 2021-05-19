@@ -28,7 +28,7 @@ pipeline {
                 echo '### Checking for compile errors ###'
                 sh '''
                         cd ${APP_NAME}
-                        mvn  -s settings.xml -B clean compile
+                        mvn  -B clean compile
                    '''
             }
         }
